@@ -11,6 +11,6 @@ interface IMatchData {
 }
 
 interface IContext {
-  matchData: IMatchData[] | null;
+  matchData: IMatchData[] | [];
   setMatchData: Dispatch<SetStateAction<IMatchData | []>>;
 }

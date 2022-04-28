@@ -1,8 +1,28 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import { AppProvider } from "context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [matchData, setMatchData] = useState<IMatchData[] | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch(
+        "https://gist.githubusercontent.com/hdck007/57650c774d9631c097db855bf110a4b6/raw/58b00de2a8c06831fda2f471e1b635a90208a4be/ipl.json"
+      ).then((res) => res.json());
+
+      setMatchData(data);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <AppProvider value={{ matchData, setMatchData }}>
+      <Component {...pageProps} />
+    </AppProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
