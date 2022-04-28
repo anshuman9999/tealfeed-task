@@ -8,8 +8,13 @@ const CardWrapper = () => {
   const { matchData } = useAppContext();
   return (
     <S.CardsContainer>
-      {matchData?.map((match) => (
-        <Card match={match} key={match.id} />
+      {matchData?.map((match, index) => (
+        <Card
+          match={match}
+          matchNumber={index + 1}
+          totalMatches={matchData?.length || 0}
+          key={match.id}
+        />
       ))}
     </S.CardsContainer>
   );
