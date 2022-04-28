@@ -1,4 +1,16 @@
 interface ITab {
   title: string;
-  active: boolean;
+}
+
+interface IMatchData {
+  date: string;
+  id: string;
+  team1: string;
+  team2: string;
+  winner: string;
+}
+
+interface IContext {
+  matchData: IMatchData[] | null;
+  setMatchData: Dispatch<SetStateAction<IMatchData | []>>;
 }
