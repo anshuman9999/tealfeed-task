@@ -34,3 +34,9 @@ export const SearchWrapper = styled.div`
     }
   }
 `;
+
+export const TabsWrapper = styled.div`
+  max-width: 752px;
+  margin: auto;
+  display: flex;
+`;
