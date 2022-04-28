@@ -1,5 +1,5 @@
-import Tab from "components/Tab/Tab";
 import React from "react";
+import Tab from "components/Tab/Tab";
 import * as S from "./Tabs.styles";
 
 interface ITabsProps {

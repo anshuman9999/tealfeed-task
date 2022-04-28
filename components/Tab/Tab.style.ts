@@ -10,4 +10,9 @@ export const TabWrapper = styled.li<{ active: boolean }>`
   cursor: pointer;
 
   border-bottom: ${({ active }) => active && "4px solid #fff"};
+
+  & a {
+    width: 100%;
+    text-align: center;
+  }
 `;

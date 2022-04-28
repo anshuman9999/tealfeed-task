@@ -1,4 +1,7 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
+import { useMemo } from "react";
 import * as S from "./Tab.style";
 
 interface ITabProps {
@@ -6,7 +9,22 @@ interface ITabProps {
 }
 
 const Tab = ({ tab }: ITabProps) => {
-  return <S.TabWrapper active={tab.active}>{tab.title}</S.TabWrapper>;
+  const router = useRouter();
+  const activeTab = router.pathname === "/" ? "Matches" : "Table";
+
+  const pageLink = useMemo(() => {
+    if (tab.title === "Matches") return "/";
+
+    return "/table";
+  }, [tab.title]);
+
+  return (
+    <S.TabWrapper active={activeTab === tab.title}>
+      <Link href={pageLink}>
+        <a>{tab.title}</a>
+      </Link>
+    </S.TabWrapper>
+  );
 };
 
 export default Tab;

@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Header />
-      <div>Matches Component</div>
+      <div>Table Component</div>
     </Layout>
   );
 };
