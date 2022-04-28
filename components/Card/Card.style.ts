@@ -28,6 +28,12 @@ export const CardWrapper = styled.div`
     flex-direction: column;
     gap: 8px;
 
+    & .team_name_img_container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     & .winner-color {
       color: #fff;
     }

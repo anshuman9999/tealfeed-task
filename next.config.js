@@ -4,6 +4,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["ssl.gstatic.com"],
+  },
 };
 
 module.exports = nextConfig;

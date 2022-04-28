@@ -1,3 +1,5 @@
+import { logos } from "data";
+import Image from "next/image";
 import React from "react";
 import { getInitials } from "utils";
 import * as S from "./Card.style";
@@ -21,12 +23,28 @@ const Card = ({ match, matchNumber, totalMatches }: ICardProps) => {
       </div>
 
       <div className="match_details__container">
-        <span className={`${winner === team1 ? "winner-color" : ""}`}>
-          {getInitials(team1)}
-        </span>
-        <span className={`${winner === team2 ? "winner-color" : ""}`}>
-          {getInitials(team2)}
-        </span>
+        <div className="team_name_img_container">
+          <Image
+            src={logos?.[`${getInitials(team1)}`]}
+            alt={team1}
+            width={24}
+            height={24}
+          />
+          <span className={`${winner === team1 ? "winner-color" : ""}`}>
+            {getInitials(team1)}
+          </span>
+        </div>
+        <div className="team_name_img_container">
+          <Image
+            src={logos?.[`${getInitials(team2)}`]}
+            alt={team2}
+            width={24}
+            height={24}
+          />
+          <span className={`${winner === team2 ? "winner-color" : ""}`}>
+            {getInitials(team2)}
+          </span>
+        </div>
       </div>
     </S.CardWrapper>
   );
