@@ -22,9 +22,7 @@ const Header = () => {
         </div>
       </S.SearchWrapper>
 
-      <S.TabsWrapper>
-        <Tabs tabs={tabs} />
-      </S.TabsWrapper>
+      <Tabs tabs={tabs} />
     </S.HeaderWrapper>
   );
 };

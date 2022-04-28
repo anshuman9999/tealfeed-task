@@ -1,4 +1,6 @@
+import Tab from "components/Tab/Tab";
 import React from "react";
+import * as S from "./Tabs.styles";
 
 interface ITabsProps {
   tabs: ITab[];
@@ -6,11 +8,13 @@ interface ITabsProps {
 
 const Tabs = ({ tabs }: ITabsProps) => {
   return (
-    <div>
-      {tabs.map((tab, index) => (
-        <div key={index}>{tab.title}</div>
-      ))}
-    </div>
+    <S.TabsWrapper>
+      <ol className="list__container">
+        {tabs.map((tab, index) => (
+          <Tab tab={tab} key={index} />
+        ))}
+      </ol>
+    </S.TabsWrapper>
   );
 };
 

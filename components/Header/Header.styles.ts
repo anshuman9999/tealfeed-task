@@ -4,6 +4,8 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   background-color: #008081;
   color: #fff;
+  box-shadow: 0px 5px 26px 0px rgb(0 0 0 / 22%),
+    0px 20px 28px 0px rgb(0 0 0 / 30%);
 `;
 
 export const SearchWrapper = styled.div`
@@ -33,10 +35,4 @@ export const SearchWrapper = styled.div`
       border: none;
     }
   }
-`;
-
-export const TabsWrapper = styled.div`
-  max-width: 752px;
-  margin: auto;
-  display: flex;
 `;
