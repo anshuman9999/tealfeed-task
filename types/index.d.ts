@@ -14,4 +14,6 @@ interface IContext {
   matchData: IMatchData[] | [];
   setMatchData: Dispatch<SetStateAction<IMatchData | []>>;
   winnerFrequency: Record<string, number>;
+  theme: string;
+  setTheme: (arg: string) => void;
 }

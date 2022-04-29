@@ -5,8 +5,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import Tabs from "components/Tabs";
 import { tabs } from "data/index";
 import * as S from "./Header.styles";
+import { useAppContext } from "context";
 
 const Header = () => {
+  const { theme, setTheme } = useAppContext();
+  const themeToSet = theme === "dark" ? "light" : "dark";
+
   return (
     <S.HeaderWrapper>
       <S.SearchWrapper>
@@ -17,7 +21,12 @@ const Header = () => {
         <div className="search__input__container">
           <input type="text" placeholder="Enter team(s)" />
         </div>
-        <div>
+        <div
+          onClick={() => {
+            console.log("lmao");
+            setTheme(themeToSet);
+          }}
+        >
           <AiOutlineClose size={20} />
         </div>
       </S.SearchWrapper>

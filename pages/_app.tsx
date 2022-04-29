@@ -2,9 +2,12 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import { AppProvider } from "context";
+import useLocalStorage from "hooks/useLocalStorage";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [matchData, setMatchData] = useState<IMatchData[] | []>([]);
+  const [theme = "", setTheme = () => {}] =
+    useLocalStorage("theme", "dark") || [];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +34,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <AppProvider value={{ matchData, setMatchData, winnerFrequency }}>
+    <AppProvider
+      value={{ matchData, setMatchData, winnerFrequency, theme, setTheme }}
+    >
       <Component {...pageProps} />
     </AppProvider>
   );

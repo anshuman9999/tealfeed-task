@@ -4,6 +4,8 @@ const initialValue: IContext = {
   matchData: [],
   setMatchData: () => {},
   winnerFrequency: {},
+  theme: "dark",
+  setTheme: () => {},
 };
 
 const AppContext = createContext<IContext>(initialValue);
