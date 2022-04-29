@@ -19,7 +19,7 @@ const Table = () => {
             <span>W</span>
             <span>L</span>
             <span>Pts</span>
-            <span>Last 5</span>
+            <span className="last_5__container">Last 5</span>
           </div>
         </div>
 

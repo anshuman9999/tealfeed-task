@@ -6,13 +6,19 @@ export const TabWrapper = styled.li<{ active: boolean }>`
   align-items: center;
   font-size: 14px;
   width: 100%;
-  padding: 10px 0;
   cursor: pointer;
 
-  border-bottom: ${({ active }) => active && "4px solid #fff"};
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 2px 2px 0 0;
+  }
+
+  border-bottom: 4px solid;
+  border-color: ${({ active }) => (active ? "#fff" : "transparent")};
 
   & a {
     width: 100%;
     text-align: center;
+    padding: 10px 0;
   }
 `;

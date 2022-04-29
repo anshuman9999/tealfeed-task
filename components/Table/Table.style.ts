@@ -25,6 +25,8 @@ export const TableMainContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    color: #93969d;
 
     & .table__header__name {
       width: 60%;
@@ -33,8 +35,13 @@ export const TableMainContainer = styled.div`
     & .table__header__info {
       width: 40%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       gap: 4px;
+
+      & .last_5__container {
+        width: 50%;
+        text-align: center;
+      }
     }
   }
 `;
