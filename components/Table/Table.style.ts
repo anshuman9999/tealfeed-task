@@ -14,7 +14,6 @@ export const TableMainContainer = styled.div`
   height: 100%;
   background-color: #202124;
   color: #fff;
-  outline: 1px solid;
   padding-top: 120px;
   padding-left: 16px;
   padding-right: 16px;
