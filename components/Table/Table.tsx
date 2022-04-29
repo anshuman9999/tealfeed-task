@@ -1,3 +1,5 @@
+import TableRow from "components/TableRow";
+import { teamNames } from "data";
 import React from "react";
 import * as S from "./Table.style";
 
@@ -15,6 +17,10 @@ const Table = () => {
             <span>Last 5</span>
           </div>
         </div>
+
+        {teamNames.map((teamName, index) => (
+          <TableRow key={teamName} teamName={teamName} teamNumber={index + 1} />
+        ))}
       </S.TableMainContainer>
     </S.TableWrapper>
   );
