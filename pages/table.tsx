@@ -1,14 +1,16 @@
 import type { NextPage } from "next";
 import Header from "components/Header";
-import Layout from "components/Layout";
 import Table from "components/Table";
+import dynamic from "next/dynamic";
+
+const LayoutNoSSR = dynamic(() => import("components/Layout"), { ssr: false });
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <LayoutNoSSR>
       <Header />
       <Table />
-    </Layout>
+    </LayoutNoSSR>
   );
 };
 
