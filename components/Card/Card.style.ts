@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.div<{ theme: string }>`
   width: 100%;
   min-height: 140px;
-  outline: 1px solid #3c4043;
-  background-color: #202124;
-  color: #93969d;
+  outline: 2px solid
+    ${({ theme }) => (theme === "dark" ? "#3c4043" : "#f1f1f3")};
+  background-color: ${({ theme }) => (theme === "dark" ? "#202124" : "#fff")};
+  color: ${({ theme }) => (theme === "dark" ? "#93969d" : "#444")};
   padding: 16px;
 
   & .matchNumber__container {
@@ -35,7 +36,7 @@ export const CardWrapper = styled.div`
     }
 
     & .winner-color {
-      color: #fff;
+      color: ${({ theme }) => (theme === "dark" ? "#fff" : "#000")};
     }
   }
 
@@ -46,6 +47,6 @@ export const CardWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-    background-color: #000;
+    background-color: ${({ theme }) => (theme === "dark" ? "#000" : "#eee")};
   }
 `;

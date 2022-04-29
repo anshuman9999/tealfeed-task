@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
+import { FiMoon } from "react-icons/fi";
+import { BsSun } from "react-icons/bs";
 
 import Tabs from "components/Tabs";
 import { tabs } from "data/index";
@@ -9,7 +10,10 @@ import { useAppContext } from "context";
 
 const Header = () => {
   const { theme, setTheme } = useAppContext();
-  const themeToSet = theme === "dark" ? "light" : "dark";
+  const themeChangeHandler = () => {
+    const themeToSet = theme === "dark" ? "light" : "dark";
+    setTheme(themeToSet);
+  };
 
   return (
     <S.HeaderWrapper>
@@ -21,13 +25,8 @@ const Header = () => {
         <div className="search__input__container">
           <input type="text" placeholder="Enter team(s)" />
         </div>
-        <div
-          onClick={() => {
-            console.log("lmao");
-            setTheme(themeToSet);
-          }}
-        >
-          <AiOutlineClose size={20} />
+        <div onClick={themeChangeHandler} className="theme__btn">
+          {theme === "light" ? <BsSun size={20} /> : <FiMoon size={20} />}
         </div>
       </S.SearchWrapper>
 

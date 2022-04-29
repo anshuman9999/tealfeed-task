@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const LayoutContainer = styled.div`
+export const LayoutContainer = styled.div<{ theme: string }>`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #303134;
+  background-color: ${({ theme }) => (theme === "dark" ? "#303134" : "#fff")};
 `;

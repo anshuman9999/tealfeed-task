@@ -1,5 +1,6 @@
-import { useAppContext } from "context";
 import React from "react";
+
+import { useAppContext } from "context";
 import * as S from "./Layout.style";
 
 interface ILayoutProps {
@@ -7,7 +8,8 @@ interface ILayoutProps {
 }
 
 const Layout = ({ children }: ILayoutProps) => {
-  return <S.LayoutContainer>{children}</S.LayoutContainer>;
+  const { theme } = useAppContext();
+  return <S.LayoutContainer theme={theme}>{children}</S.LayoutContainer>;
 };
 
 export default Layout;

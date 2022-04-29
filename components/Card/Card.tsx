@@ -1,3 +1,4 @@
+import { useAppContext } from "context";
 import { logos, teamMap } from "data";
 import Image from "next/image";
 import React from "react";
@@ -11,9 +12,10 @@ interface ICardProps {
 
 const Card = ({ match, matchNumber, totalMatches }: ICardProps) => {
   const { date, team1, team2, winner } = match;
+  const { theme } = useAppContext();
 
   return (
-    <S.CardWrapper>
+    <S.CardWrapper theme={theme}>
       <div className="matchNumber__container">
         <span className="match_number">
           T20 {matchNumber} of {totalMatches}

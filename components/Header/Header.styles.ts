@@ -8,8 +8,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   background-color: #008081;
   color: #fff;
-  box-shadow: 0px 5px 26px 0px rgb(0 0 0 / 22%),
-    0px 20px 28px 0px rgb(0 0 0 / 30%);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.4);
 `;
 
 export const SearchWrapper = styled.div`
@@ -38,5 +37,9 @@ export const SearchWrapper = styled.div`
       padding: 4px;
       border: none;
     }
+  }
+
+  & .theme__btn {
+    cursor: pointer;
   }
 `;

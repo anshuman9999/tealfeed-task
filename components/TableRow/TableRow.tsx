@@ -6,6 +6,7 @@ import { Cancel, Check } from "static/icons";
 
 import { logos, teamMap } from "data";
 import * as S from "./TableRow.style";
+import { useAppContext } from "context";
 
 interface ITableRowProps {
   teamName: string;
@@ -20,12 +21,13 @@ const TableRow = ({ teamName, teamNumber }: ITableRowProps) => {
     totalPoints,
     lastFiveMatchesData,
   } = useTeam(teamName);
+  const { theme } = useAppContext();
 
   const teamInitial = teamMap[teamName];
   const logo = logos?.[teamInitial];
 
   return (
-    <S.TableRowWrapper>
+    <S.TableRowWrapper theme={theme}>
       <S.RowName>
         <span>{teamNumber}</span>
         <Image src={logo} alt={teamName} height={24} width={24} />

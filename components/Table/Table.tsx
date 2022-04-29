@@ -4,14 +4,14 @@ import React from "react";
 import * as S from "./Table.style";
 
 const Table = () => {
-  const { winnerFrequency } = useAppContext();
+  const { winnerFrequency, theme } = useAppContext();
   const sortedTeamNames = Object.entries(winnerFrequency)
     .sort((a, b) => b[1] - a[1])
     .map((element) => element[0]);
 
   return (
-    <S.TableWrapper>
-      <S.TableMainContainer>
+    <S.TableWrapper theme={theme}>
+      <S.TableMainContainer theme={theme}>
         <div className="table__header">
           <div className="table__header__name">Team</div>
           <div className="table__header__info">

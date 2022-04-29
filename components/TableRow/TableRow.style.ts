@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const TableRowWrapper = styled.div`
+export const TableRowWrapper = styled.div<{ theme: string }>`
   display: flex;
   width: 100%;
-  color: #b8b9bd;
-  border-top: 1px solid #93969d;
+  color: ${({ theme }) => (theme === "dark" ? "#b8b9bd" : "#000")};
+  border-top: 2px solid
+    ${({ theme }) => (theme === "dark" ? "#333" : "#f1f1f3")};
   padding: 10px 0;
   font-size: 14px;
 `;

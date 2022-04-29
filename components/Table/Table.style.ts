@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TableWrapper = styled.div`
+export const TableWrapper = styled.div<{ theme: string }>`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -8,12 +8,12 @@ export const TableWrapper = styled.div`
   justify-content: center;
 `;
 
-export const TableMainContainer = styled.div`
+export const TableMainContainer = styled.div<{ theme: string }>`
   width: 100%;
   max-width: 752px;
   height: 100%;
-  background-color: #202124;
-  color: #fff;
+  background-color: ${({ theme }) => (theme === "dark" ? "#202124" : "#fff")};
+  border: 2px solid ${({ theme }) => (theme === "dark" ? "" : "#f1f1f3")};
   padding-top: 120px;
   padding-left: 16px;
   padding-right: 16px;
@@ -24,7 +24,7 @@ export const TableMainContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    color: #93969d;
+    color: ${({ theme }) => (theme === "dark" ? "#93969d" : "#70757a")};
     font-size: 12px;
 
     & .table__header__name {
