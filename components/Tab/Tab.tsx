@@ -10,10 +10,10 @@ interface ITabProps {
 
 const Tab = ({ tab }: ITabProps) => {
   const router = useRouter();
-  const activeTab = router.pathname === "/" ? "Matches" : "Table";
+  const activeTab = router.pathname === "/" ? "MATCHES" : "TABLE";
 
   const pageLink = useMemo(() => {
-    if (tab.title === "Matches") return "/";
+    if (tab.title === "MATCHES") return "/";
 
     return "/table";
   }, [tab.title]);

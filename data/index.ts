@@ -1,7 +1,7 @@
 export const tabs: ITab[] = [
-  { title: "Matches" },
+  { title: "MATCHES" },
   {
-    title: "Table",
+    title: "TABLE",
   },
 ];
 
