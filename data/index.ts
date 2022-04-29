@@ -13,7 +13,33 @@ export const logos: Record<string, string> = {
   LSG: "https://ssl.gstatic.com/onebox/media/sports/logos/b6uyRF-RX56muhQOv1-Z3A_48x48.png",
   RR: "https://ssl.gstatic.com/onebox/media/sports/logos/turpQqyPRIMvuksLiSDSjQ_48x48.png",
   CSK: "https://ssl.gstatic.com/onebox/media/sports/logos/exZiFUT_GXScTyr358t7SQ_48x48.png",
-  PK: "https://ssl.gstatic.com/onebox/media/sports/logos/HxbhoKfAgDZogey6S9E4bA_48x48.png",
-  SH: "https://ssl.gstatic.com/onebox/media/sports/logos/G9q07ZXPVbPkXOagStz3Yw_48x48.png",
+  PBKS: "https://ssl.gstatic.com/onebox/media/sports/logos/HxbhoKfAgDZogey6S9E4bA_48x48.png",
+  SRH: "https://ssl.gstatic.com/onebox/media/sports/logos/G9q07ZXPVbPkXOagStz3Yw_48x48.png",
   MI: "https://ssl.gstatic.com/onebox/media/sports/logos/JTre94vh6WJeLmIL-Dfc1g_48x48.png",
+};
+
+export const teamNames = [
+  "Chennai Super Kings",
+  "Mumbai Indians",
+  "Royal Challengers Bangalore",
+  "Lucknow Super Giants",
+  "Rajasthan Royals",
+  "Kolkata Knight Riders",
+  "Punjab Kings",
+  "Gujarat Titans",
+  "Delhi Capitals",
+  "Sunrisers Hyderabad",
+];
+
+export const teamMap: Record<string, string> = {
+  "Chennai Super Kings": "CSK",
+  "Mumbai Indians": "MI",
+  "Royal Challengers Bangalore": "RCB",
+  "Lucknow Super Giants": "LSG",
+  "Rajasthan Royals": "RR",
+  "Kolkata Knight Riders": "KKR",
+  "Punjab Kings": "PBKS",
+  "Gujarat Titans": "GT",
+  "Delhi Capitals": "DC",
+  "Sunrisers Hyderabad": "SRH",
 };
