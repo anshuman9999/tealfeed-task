@@ -18,8 +18,20 @@ function MyApp({ Component, pageProps }: AppProps) {
     fetchData();
   }, []);
 
+  const winnersList = matchData
+    ?.map((match) => match.winner)
+    .filter((winner) => (!winner ? false : true));
+
+  const winnerFrequency: Record<string, number> = {};
+
+  for (const winner of winnersList) {
+    winnerFrequency[winner] = winnerFrequency[winner]
+      ? winnerFrequency[winner] + 1
+      : 1;
+  }
+
   return (
-    <AppProvider value={{ matchData, setMatchData }}>
+    <AppProvider value={{ matchData, setMatchData, winnerFrequency }}>
       <Component {...pageProps} />
     </AppProvider>
   );

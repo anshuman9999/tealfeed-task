@@ -13,4 +13,5 @@ interface IMatchData {
 interface IContext {
   matchData: IMatchData[] | [];
   setMatchData: Dispatch<SetStateAction<IMatchData | []>>;
+  winnerFrequency: Record<string, number>;
 }

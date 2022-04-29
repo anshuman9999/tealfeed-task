@@ -1,9 +1,14 @@
 import TableRow from "components/TableRow";
-import { teamNames } from "data";
+import { useAppContext } from "context";
 import React from "react";
 import * as S from "./Table.style";
 
 const Table = () => {
+  const { winnerFrequency } = useAppContext();
+  const sortedTeamNames = Object.entries(winnerFrequency)
+    .sort((a, b) => b[1] - a[1])
+    .map((element) => element[0]);
+
   return (
     <S.TableWrapper>
       <S.TableMainContainer>
@@ -18,7 +23,7 @@ const Table = () => {
           </div>
         </div>
 
-        {teamNames.map((teamName, index) => (
+        {sortedTeamNames.map((teamName, index) => (
           <TableRow key={teamName} teamName={teamName} teamNumber={index + 1} />
         ))}
       </S.TableMainContainer>
