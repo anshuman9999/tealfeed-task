@@ -27,6 +27,7 @@ export const TableMainContainer = styled.div`
     border-bottom: 1px solid #eee;
     padding: 10px 0;
     color: #93969d;
+    font-size: 12px;
 
     & .table__header__name {
       width: 60%;
@@ -34,6 +35,11 @@ export const TableMainContainer = styled.div`
 
     & .table__header__info {
       width: 40%;
+
+      @media (max-width: 640px) {
+        width: 70%;
+      }
+
       display: flex;
       justify-content: space-between;
       gap: 4px;

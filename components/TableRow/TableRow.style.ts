@@ -6,6 +6,7 @@ export const TableRowWrapper = styled.div`
   color: #b8b9bd;
   border-top: 1px solid #93969d;
   padding: 10px 0;
+  font-size: 14px;
 `;
 
 export const RowName = styled.div`
@@ -21,6 +22,10 @@ export const RowInfo = styled.div`
   width: 40%;
   justify-content: space-between;
   gap: 4px;
+
+  @media (max-width: 640px) {
+    width: 70%;
+  }
 
   & .last_5__result_container {
     width: 50%;

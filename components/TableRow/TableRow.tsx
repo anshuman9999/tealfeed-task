@@ -1,11 +1,11 @@
-import { logos, teamMap } from "data";
-import useTeam from "hooks/useTeam";
-import Image from "next/image";
 import React from "react";
-import * as S from "./TableRow.style";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { MdCancel } from "react-icons/md";
+import Image from "next/image";
+
+import useTeam from "hooks/useTeam";
 import { Cancel, Check } from "static/icons";
+
+import { logos, teamMap } from "data";
+import * as S from "./TableRow.style";
 
 interface ITableRowProps {
   teamName: string;
