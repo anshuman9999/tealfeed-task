@@ -23,12 +23,15 @@ const useTeam = (teamName: string) => {
     })
     .reverse();
 
+  const totalPoints = matchesWon * 2;
+
   return {
     teamMatchData,
     matchesPlayed,
     matchesWon,
     matchesLost,
     lastFiveMatchesData,
+    totalPoints,
   };
 };
 
