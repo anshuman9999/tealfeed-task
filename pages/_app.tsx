@@ -6,8 +6,8 @@ import useLocalStorage from "hooks/useLocalStorage";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [matchData, setMatchData] = useState<IMatchData[] | []>([]);
-  const [theme = "", setTheme = () => {}] =
-    useLocalStorage("theme", "dark") || [];
+  const [theme = "light", setTheme = () => {}] =
+    useLocalStorage("theme", "light") || [];
 
   useEffect(() => {
     const fetchData = async () => {

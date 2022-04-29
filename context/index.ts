@@ -4,7 +4,7 @@ const initialValue: IContext = {
   matchData: [],
   setMatchData: () => {},
   winnerFrequency: {},
-  theme: "dark",
+  theme: "light",
   setTheme: () => {},
 };
 
