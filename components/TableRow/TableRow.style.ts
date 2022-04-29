@@ -15,6 +15,10 @@ export const RowName = styled.div`
   align-items: center;
   gap: 8px;
   width: 60%;
+
+  @media (max-width: 640px) {
+    width: 40%;
+  }
 `;
 
 export const RowInfo = styled.div`
@@ -24,7 +28,7 @@ export const RowInfo = styled.div`
   gap: 4px;
 
   @media (max-width: 640px) {
-    width: 70%;
+    width: 60%;
   }
 
   & .last_5__result_container {
