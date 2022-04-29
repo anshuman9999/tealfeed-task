@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AppProvider } from "context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [matchData, setMatchData] = useState<IMatchData[] | null>(null);
+  const [matchData, setMatchData] = useState<IMatchData[] | []>([]);
 
   useEffect(() => {
     const fetchData = async () => {
