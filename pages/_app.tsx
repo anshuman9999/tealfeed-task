@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import { AppProvider } from "context";
 import useLocalStorage from "hooks/useLocalStorage";
+import { useThemeDetector } from "hooks/useThemeDetector";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [matchData, setMatchData] = useState<IMatchData[] | []>([]);
@@ -12,8 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const [loading, setLoading] = useState(true);
 
-  const [theme = "dark", setTheme = () => {}] =
-    useLocalStorage("theme", "dark") || [];
+  const isDefaultDark = useThemeDetector();
+  const defaultTheme = isDefaultDark ? "dark" : "light";
+
+  const [theme = defaultTheme, setTheme = () => {}] =
+    useLocalStorage("theme", defaultTheme) || [];
 
   const fetchData = async () => {
     const data = await fetch(
