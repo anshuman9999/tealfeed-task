@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.div`
   color: #fff;
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.4);
   max-height: 150px;
+  user-select: none;
 `;
 
 export const SearchWrapper = styled.div`
@@ -23,10 +24,19 @@ export const SearchWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 640px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   & .back__btn__container {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+
+    @media (max-width: 640px) {
+      gap: 4px;
+    }
   }
 
   & .search__input__container {

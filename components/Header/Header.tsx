@@ -51,7 +51,11 @@ const Header = () => {
     <S.HeaderWrapper>
       <S.SearchWrapper>
         <div className="back__btn__container">
-          <BsArrowLeft size={20} />
+          <BsArrowLeft
+            style={{ cursor: "pointer" }}
+            size={20}
+            onClick={() => router.back()}
+          />
           IPL
         </div>
         {!isTable && (

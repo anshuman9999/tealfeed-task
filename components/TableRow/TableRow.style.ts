@@ -8,6 +8,10 @@ export const TableRowWrapper = styled.div<{ theme: string }>`
     ${({ theme }) => (theme === "dark" ? "#333" : "#f1f1f3")};
   padding: 10px 0;
   font-size: 14px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const RowName = styled.div`

@@ -13,7 +13,7 @@ export const TableMainContainer = styled.div<{ theme: string }>`
   max-width: 752px;
   height: 100%;
   background-color: ${({ theme }) => (theme === "dark" ? "#202124" : "#fff")};
-  border: 2px solid ${({ theme }) => (theme === "dark" ? "" : "#f1f1f3")};
+  border: 2px solid ${({ theme }) => (theme === "dark" ? "#545454" : "#f1f1f3")};
   padding-top: 150px;
   padding-left: 16px;
   padding-right: 16px;
