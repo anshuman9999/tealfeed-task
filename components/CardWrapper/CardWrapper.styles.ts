@@ -7,6 +7,7 @@ export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 50%);
   margin: 0 auto;
+  margin-bottom: 20px;
 
   @media (max-width: 640px) {
     grid-template-columns: 100%;
