@@ -8,6 +8,7 @@ export const CardWrapper = styled.div<{ theme: string }>`
   background-color: ${({ theme }) => (theme === "dark" ? "#202124" : "#fff")};
   color: ${({ theme }) => (theme === "dark" ? "#93969d" : "#444")};
   padding: 16px;
+  transition: background-color ease 0.3s;
 
   & .matchNumber__container {
     display: flex;

@@ -6,4 +6,5 @@ export const LayoutContainer = styled.div<{ theme: string }>`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => (theme === "dark" ? "#303134" : "#fff")};
+  transition: background-color ease 0.3s;
 `;

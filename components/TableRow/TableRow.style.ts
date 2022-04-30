@@ -36,6 +36,6 @@ export const RowInfo = styled.div`
     width: 50%;
     display: flex;
     justify-content: center;
-    gap: 2px;
+    gap: 4px;
   }
 `;

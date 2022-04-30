@@ -9,7 +9,7 @@ export const TabWrapper = styled.li<{ active: boolean }>`
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 2px 2px 0 0;
   }
 

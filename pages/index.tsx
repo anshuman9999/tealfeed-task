@@ -5,13 +5,11 @@ import dynamic from "next/dynamic";
 
 const LayoutNoSSR = dynamic(() => import("components/Layout"), { ssr: false });
 
-const Home: NextPage = () => {
-  return (
-    <LayoutNoSSR>
-      <Header />
-      <CardWrapper />
-    </LayoutNoSSR>
-  );
-};
+const Home: NextPage = () => (
+  <LayoutNoSSR>
+    <Header />
+    <CardWrapper />
+  </LayoutNoSSR>
+);
 
 export default Home;

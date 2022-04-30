@@ -17,6 +17,7 @@ export const TableMainContainer = styled.div<{ theme: string }>`
   padding-top: 120px;
   padding-left: 16px;
   padding-right: 16px;
+  transition: background-color ease 0.3s;
 
   & .table__header {
     width: 100%;
