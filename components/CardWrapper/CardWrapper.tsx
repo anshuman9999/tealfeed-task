@@ -3,12 +3,13 @@ import { useAppContext } from "context";
 
 import * as S from "./CardWrapper.styles";
 import Card from "components/Card/Card";
+import Spinner from "components/Spinner";
 
 const CardWrapper = () => {
   const { matchData, loading } = useAppContext();
 
   if (loading) {
-    return <S.CardsContainer>Loading...</S.CardsContainer>;
+    return <Spinner />;
   }
 
   return (

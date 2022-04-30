@@ -14,10 +14,10 @@ export const TableMainContainer = styled.div<{ theme: string }>`
   height: 100%;
   background-color: ${({ theme }) => (theme === "dark" ? "#202124" : "#fff")};
   border: 2px solid ${({ theme }) => (theme === "dark" ? "" : "#f1f1f3")};
-  padding-top: 120px;
+  padding-top: 150px;
   padding-left: 16px;
   padding-right: 16px;
-  transition: background-color ease 0.3s;
+  transition: background-color ease 0.1s;
 
   & .table__header {
     width: 100%;

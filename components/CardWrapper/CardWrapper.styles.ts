@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardsContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding-top: 120px;
+  padding-top: 150px;
   max-width: 752px;
   display: grid;
   grid-template-columns: repeat(2, 50%);

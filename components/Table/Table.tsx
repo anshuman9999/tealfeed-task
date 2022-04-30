@@ -1,10 +1,12 @@
+import Spinner from "components/Spinner";
 import TableRow from "components/TableRow";
 import { useAppContext } from "context";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./Table.style";
 
 const Table = () => {
   const { theme, fetchData, winnerFrequency } = useAppContext();
+  const [tableLoad, setTableLoad] = useState(true);
 
   const sortedTeamNames = Object.entries(winnerFrequency)
     .sort((a, b) => b[1] - a[1])
@@ -12,7 +14,10 @@ const Table = () => {
 
   useEffect(() => {
     fetchData?.();
+    setTableLoad(false);
   }, [fetchData]);
+
+  if (tableLoad) return <Spinner />;
 
   return (
     <S.TableWrapper theme={theme}>

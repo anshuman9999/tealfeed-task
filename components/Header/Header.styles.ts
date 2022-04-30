@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.div`
   background-color: #008081;
   color: #fff;
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  max-height: 150px;
 `;
 
 export const SearchWrapper = styled.div`
