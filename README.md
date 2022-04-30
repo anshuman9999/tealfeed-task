@@ -2,6 +2,10 @@
 
 This is my submission for the Tealfeed Front-End Assignment.
 
+## Deployed Link:
+
+[https://tealfeed-task.vercel.app/](https://tealfeed-task.vercel.app/)
+
 ## Technologies Used:
 
 1. Next.js
@@ -17,8 +21,6 @@ This is my submission for the Tealfeed Front-End Assignment.
 
 ## Open-Source packages / libraries used:
 
-1. styled-components : I've used styled-components for all the css in this project. Styled components is amazing.
+1. [styled-components](https://github.com/styled-components/styled-components) : I've used styled-components for all the css in this project. Styled components is amazing.
 
-2. react-select : I've used this for making the multi options select input element.
-
-3. react-icons : I've used react-icons to get all the icons in the app.
+2. [react-select](https://github.com/JedWatson/react-select) : I've used this for making the multi options select input element.
