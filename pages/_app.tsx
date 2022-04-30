@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { AppProvider } from "context/appContext";
 import useLocalStorage from "hooks/useLocalStorage";
 import { useThemeDetector } from "hooks/useThemeDetector";
+import { teamNames } from "data";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [matchData, setMatchData] = useState<IMatchData[] | []>([]);
@@ -39,9 +40,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     fetchData();
   }, []);
 
-  const winnersList = matchData
+  let winnersList = matchData
     ?.map((match) => match.winner)
     .filter((winner) => winner);
+
+  const teamsWithNoWins = teamNames.filter(
+    (teamName) => !winnersList.includes(teamName)
+  );
 
   const winnerFrequency: Record<string, number> = {};
 
@@ -49,6 +54,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     winnerFrequency[winner] = winnerFrequency[winner]
       ? winnerFrequency[winner] + 1
       : 1;
+  }
+
+  for (const loser of teamsWithNoWins) {
+    winnerFrequency[loser] = 0;
   }
 
   return (

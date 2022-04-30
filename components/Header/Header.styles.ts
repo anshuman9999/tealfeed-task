@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.div`
   left: 0;
   z-index: 10;
   width: 100%;
-  background-color: #008081;
+  background-color: teal;
   color: #fff;
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.4);
   max-height: 150px;
