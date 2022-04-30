@@ -1,6 +1,6 @@
 import Spinner from "components/Spinner";
 import TableRow from "components/TableRow";
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 import React, { useEffect, useState } from "react";
 import * as S from "./Table.style";
 

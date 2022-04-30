@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 
 import * as S from "./CardWrapper.styles";
 import Card from "components/Card/Card";
@@ -14,12 +14,12 @@ const CardWrapper = () => {
 
   return (
     <S.CardsContainer>
-      {matchData?.map((match, index) => (
+      {matchData?.map((match) => (
         <Card
           match={match}
-          matchNumber={index + 1}
+          matchNumber={match.matchNumber}
           totalMatches={matchData?.length || 0}
-          key={index}
+          key={match.id}
         />
       ))}
     </S.CardsContainer>

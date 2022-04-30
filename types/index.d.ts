@@ -8,6 +8,7 @@ interface IMatchData {
   team1: string;
   team2: string;
   winner: string;
+  matchNumber: number;
 }
 
 interface IContext {

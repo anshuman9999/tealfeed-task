@@ -6,7 +6,7 @@ import { Cancel, Check } from "static/icons";
 
 import { logos, teamMap } from "data";
 import * as S from "./TableRow.style";
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 
 interface ITableRowProps {
   teamName: string;

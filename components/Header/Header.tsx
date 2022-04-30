@@ -7,7 +7,7 @@ import Select, { MultiValue } from "react-select";
 import Tabs from "components/Tabs";
 import { searchTeamOptions, tabs } from "data/index";
 import * as S from "./Header.styles";
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 import { useRouter } from "next/router";
 
 const Header = () => {

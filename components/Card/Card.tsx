@@ -1,4 +1,4 @@
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 import { logos, teamMap } from "data";
 import Image from "next/image";
 import React from "react";

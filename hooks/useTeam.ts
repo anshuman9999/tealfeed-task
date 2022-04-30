@@ -1,4 +1,4 @@
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 
 const useTeam = (teamName: string) => {
   const { matchData } = useAppContext();

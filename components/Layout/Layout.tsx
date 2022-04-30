@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useAppContext } from "context";
+import { useAppContext } from "context/appContext";
 import * as S from "./Layout.style";
 
 interface ILayoutProps {
