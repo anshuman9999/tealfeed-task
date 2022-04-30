@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const [loading, setLoading] = useState(true);
 
-  const [theme = "light", setTheme = () => {}] =
-    useLocalStorage("theme", "light") || [];
+  const [theme = "dark", setTheme = () => {}] =
+    useLocalStorage("theme", "dark") || [];
 
   const fetchData = async () => {
     const data = await fetch(

@@ -14,6 +14,7 @@ const Header = () => {
   const { theme, setTheme, setMatchData, initialMatchData } = useAppContext();
 
   const router = useRouter();
+  const isTable = router.pathname === "/table";
 
   const themeChangeHandler = () => {
     const themeToSet = theme === "dark" ? "light" : "dark";
@@ -26,7 +27,7 @@ const Header = () => {
       label: string;
     }>
   ) => {
-    if (router.pathname === "/table") {
+    if (isTable) {
       return;
     }
     if (!props || !props.length) {
@@ -53,13 +54,16 @@ const Header = () => {
           <BsArrowLeft size={20} />
           IPL
         </div>
-        <div className="search__input__container">
-          <Select
-            options={searchTeamOptions}
-            isMulti
-            onChange={filterDataHandler}
-          />
-        </div>
+        {!isTable && (
+          <div className="search__input__container">
+            <Select
+              options={searchTeamOptions}
+              isMulti
+              onChange={filterDataHandler}
+              placeholder="Enter Team(s)"
+            />
+          </div>
+        )}
         <div onClick={themeChangeHandler} className="theme__btn">
           {theme === "light" ? <BsSun size={20} /> : <FiMoon size={20} />}
         </div>
