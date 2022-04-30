@@ -1,7 +1,5 @@
 import React from "react";
-import { BsArrowLeft } from "react-icons/bs";
-import { FiMoon } from "react-icons/fi";
-import { BsSun } from "react-icons/bs";
+import { ArrowLeft, Moon, Sun } from "static/icons";
 import Select, { MultiValue } from "react-select";
 
 import Tabs from "components/Tabs";
@@ -51,11 +49,9 @@ const Header = () => {
     <S.HeaderWrapper>
       <S.SearchWrapper>
         <div className="back__btn__container">
-          <BsArrowLeft
-            style={{ cursor: "pointer" }}
-            size={20}
-            onClick={() => router.back()}
-          />
+          <div className="back__btn" onClick={() => router.back()}>
+            <ArrowLeft />
+          </div>
           IPL
         </div>
         {!isTable && (
@@ -69,7 +65,7 @@ const Header = () => {
           </div>
         )}
         <div onClick={themeChangeHandler} className="theme__btn">
-          {theme === "light" ? <BsSun size={20} /> : <FiMoon size={20} />}
+          {theme === "light" ? <Sun /> : <Moon />}
         </div>
       </S.SearchWrapper>
 

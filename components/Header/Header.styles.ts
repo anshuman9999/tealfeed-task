@@ -37,6 +37,10 @@ export const SearchWrapper = styled.div`
     @media (max-width: 640px) {
       gap: 4px;
     }
+
+    & .back__btn {
+      cursor: pointer;
+    }
   }
 
   & .search__input__container {
