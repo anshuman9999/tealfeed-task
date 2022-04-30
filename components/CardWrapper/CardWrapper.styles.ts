@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardsContainer = styled.div`
   width: 100%;
+  height: 100%;
   padding-top: 120px;
   max-width: 752px;
   display: grid;

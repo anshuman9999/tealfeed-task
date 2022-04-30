@@ -13,7 +13,7 @@ export const TabWrapper = styled.li<{ active: boolean }>`
     border-radius: 2px 2px 0 0;
   }
 
-  border-bottom: 4px solid;
+  border-bottom: 2px solid;
   border-color: ${({ active }) => (active ? "#fff" : "transparent")};
 
   & a {

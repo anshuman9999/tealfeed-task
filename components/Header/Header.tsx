@@ -2,17 +2,48 @@ import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { FiMoon } from "react-icons/fi";
 import { BsSun } from "react-icons/bs";
+import Select, { MultiValue } from "react-select";
 
 import Tabs from "components/Tabs";
-import { tabs } from "data/index";
+import { searchTeamOptions, tabs } from "data/index";
 import * as S from "./Header.styles";
 import { useAppContext } from "context";
+import { useRouter } from "next/router";
 
 const Header = () => {
-  const { theme, setTheme } = useAppContext();
+  const { theme, setTheme, setMatchData, initialMatchData } = useAppContext();
+
+  const router = useRouter();
+
   const themeChangeHandler = () => {
     const themeToSet = theme === "dark" ? "light" : "dark";
     setTheme(themeToSet);
+  };
+
+  const filterDataHandler = (
+    props: MultiValue<{
+      value: string;
+      label: string;
+    }>
+  ) => {
+    if (router.pathname === "/table") {
+      return;
+    }
+    if (!props || !props.length) {
+      setMatchData(initialMatchData);
+      return;
+    }
+
+    const newMatchData = props
+      .map((prop) => {
+        return initialMatchData.filter(
+          (match) => match.team1 === prop.value || match.team2 === prop.value
+        );
+      })
+      .flat(1);
+
+    const filteredMatchData = Array.from(new Set([...newMatchData]));
+    setMatchData(filteredMatchData);
   };
 
   return (
@@ -23,7 +54,11 @@ const Header = () => {
           IPL
         </div>
         <div className="search__input__container">
-          <input type="text" placeholder="Enter team(s)" />
+          <Select
+            options={searchTeamOptions}
+            isMulti
+            onChange={filterDataHandler}
+          />
         </div>
         <div onClick={themeChangeHandler} className="theme__btn">
           {theme === "light" ? <BsSun size={20} /> : <FiMoon size={20} />}

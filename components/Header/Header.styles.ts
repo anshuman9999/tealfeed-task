@@ -30,6 +30,7 @@ export const SearchWrapper = styled.div`
 
   & .search__input__container {
     width: 70%;
+    color: #000;
 
     input {
       width: 100%;

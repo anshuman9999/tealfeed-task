@@ -1,13 +1,18 @@
 import TableRow from "components/TableRow";
 import { useAppContext } from "context";
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./Table.style";
 
 const Table = () => {
-  const { winnerFrequency, theme } = useAppContext();
+  const { theme, fetchData, winnerFrequency } = useAppContext();
+
   const sortedTeamNames = Object.entries(winnerFrequency)
     .sort((a, b) => b[1] - a[1])
     .map((element) => element[0]);
+
+  useEffect(() => {
+    fetchData?.();
+  }, [fetchData]);
 
   return (
     <S.TableWrapper theme={theme}>

@@ -43,3 +43,59 @@ export const teamMap: Record<string, string> = {
   "Delhi Capitals": "DC",
   "Sunrisers Hyderabad": "SRH",
 };
+
+export const searchTeamMap: Record<string, string> = {
+  CSK: "Chennai Super Kings",
+  MI: "Mumbai Indians",
+  RCB: "Royal Challengers Bangalore",
+  LSG: "Lucknow Super Giants",
+  RR: "Rajasthan Royals",
+  KKR: "Kolkata Knight Riders",
+  PBKS: "Punjab Kings",
+  GT: "Gujarat Titans",
+  DC: "Delhi Capitals",
+  SRH: "Sunrisers Hyderabad",
+};
+
+export const searchTeamOptions = [
+  {
+    value: "Chennai Super Kings",
+    label: "CSK",
+  },
+  {
+    value: "Mumbai Indians",
+    label: "MI",
+  },
+  {
+    value: "Royal Challengers Bangalore",
+    label: "RCB",
+  },
+  {
+    value: "Lucknow Super Giants",
+    label: "LSG",
+  },
+  {
+    value: "Rajasthan Royals",
+    label: "RR",
+  },
+  {
+    value: "Kolkata Knight Riders",
+    label: "KKR",
+  },
+  {
+    value: "Punjab Kings",
+    label: "PBKS",
+  },
+  {
+    value: "Gujarat Titans",
+    label: "GT",
+  },
+  {
+    value: "Delhi Capitals",
+    label: "DC",
+  },
+  {
+    value: "Sunrisers Hyderabad",
+    label: "SRH",
+  },
+];

@@ -5,7 +5,12 @@ import * as S from "./CardWrapper.styles";
 import Card from "components/Card/Card";
 
 const CardWrapper = () => {
-  const { matchData } = useAppContext();
+  const { matchData, loading } = useAppContext();
+
+  if (loading) {
+    return <S.CardsContainer>Loading...</S.CardsContainer>;
+  }
+
   return (
     <S.CardsContainer>
       {matchData?.map((match, index) => (
@@ -13,7 +18,7 @@ const CardWrapper = () => {
           match={match}
           matchNumber={index + 1}
           totalMatches={matchData?.length || 0}
-          key={match.id}
+          key={index}
         />
       ))}
     </S.CardsContainer>

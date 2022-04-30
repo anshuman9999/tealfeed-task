@@ -16,4 +16,12 @@ interface IContext {
   winnerFrequency: Record<string, number>;
   theme: string;
   setTheme: (arg: string) => void;
+  fetchData?: () => Promise<void>;
+  loading: boolean;
+  initialMatchData: IMatchData[] | [];
+}
+
+interface ISearchTerm {
+  value: string;
+  label: string;
 }

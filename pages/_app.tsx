@@ -6,24 +6,32 @@ import useLocalStorage from "hooks/useLocalStorage";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [matchData, setMatchData] = useState<IMatchData[] | []>([]);
+  const [initialMatchData, setInitialMatchData] = useState<IMatchData[] | []>(
+    []
+  );
+
+  const [loading, setLoading] = useState(true);
+
   const [theme = "light", setTheme = () => {}] =
     useLocalStorage("theme", "light") || [];
 
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://gist.githubusercontent.com/hdck007/57650c774d9631c097db855bf110a4b6/raw/58b00de2a8c06831fda2f471e1b635a90208a4be/ipl.json"
+    ).then((res) => res.json());
+
+    setMatchData(data);
+    setInitialMatchData(data);
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch(
-        "https://gist.githubusercontent.com/hdck007/57650c774d9631c097db855bf110a4b6/raw/58b00de2a8c06831fda2f471e1b635a90208a4be/ipl.json"
-      ).then((res) => res.json());
-
-      setMatchData(data);
-    };
-
     fetchData();
   }, []);
 
   const winnersList = matchData
     ?.map((match) => match.winner)
-    .filter((winner) => (!winner ? false : true));
+    .filter((winner) => winner);
 
   const winnerFrequency: Record<string, number> = {};
 
@@ -35,7 +43,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <AppProvider
-      value={{ matchData, setMatchData, winnerFrequency, theme, setTheme }}
+      value={{
+        matchData,
+        setMatchData,
+        winnerFrequency,
+        theme,
+        setTheme,
+        fetchData,
+        loading,
+        initialMatchData,
+      }}
     >
       <Component {...pageProps} />
     </AppProvider>

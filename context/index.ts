@@ -6,6 +6,8 @@ const initialValue: IContext = {
   winnerFrequency: {},
   theme: "light",
   setTheme: () => {},
+  loading: false,
+  initialMatchData: [],
 };
 
 const AppContext = createContext<IContext>(initialValue);
