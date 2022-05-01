@@ -6,6 +6,7 @@ export const TabWrapper = styled.li<{ active: boolean }>`
   align-items: center;
   font-size: 14px;
   width: 100%;
+  height: 100%;
   cursor: pointer;
 
   &:hover {

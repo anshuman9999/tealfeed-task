@@ -69,7 +69,9 @@ const Header = () => {
         </div>
       </S.SearchWrapper>
 
-      <Tabs tabs={tabs} />
+      <div className="tabs__container">
+        <Tabs tabs={tabs} />
+      </div>
     </S.HeaderWrapper>
   );
 };

@@ -9,13 +9,23 @@ export const HeaderWrapper = styled.div`
   background-color: teal;
   color: #fff;
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  height: 120px;
   max-height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
   user-select: none;
+
+  & .tabs__container {
+    height: 50%;
+  }
 `;
 
 export const SearchWrapper = styled.div`
-  padding-top: 18px;
-  padding-bottom: 18px;
+  /* padding-top: 18px;
+  padding-bottom: 18px; */
+  height: 50%;
   padding-left: 16px;
   padding-right: 16px;
   line-height: 12px;
