@@ -6,7 +6,7 @@ import Card from "components/Card/Card";
 import Spinner from "components/Spinner";
 
 const CardWrapper = () => {
-  const { matchData, loading } = useAppContext();
+  const { matchData, loading, initialMatchData } = useAppContext();
 
   if (loading) {
     return <Spinner />;
@@ -18,7 +18,7 @@ const CardWrapper = () => {
         <Card
           match={match}
           matchNumber={match.matchNumber}
-          totalMatches={matchData?.length || 0}
+          totalMatches={initialMatchData?.length || 0}
           key={match.id}
         />
       ))}

@@ -50,7 +50,7 @@ const Header = () => {
       <S.SearchWrapper>
         <div className="back__btn__container">
           <div className="back__btn" onClick={() => router.back()}>
-            <ArrowLeft />
+            <ArrowLeft style={{ height: 20, width: 20 }} />
           </div>
           IPL
         </div>
@@ -65,7 +65,11 @@ const Header = () => {
           </div>
         )}
         <div onClick={themeChangeHandler} className="theme__btn">
-          {theme === "light" ? <Sun /> : <Moon />}
+          {theme === "light" ? (
+            <Sun style={{ height: 20, width: 20 }} />
+          ) : (
+            <Moon style={{ height: 20, width: 20 }} />
+          )}
         </div>
       </S.SearchWrapper>
 

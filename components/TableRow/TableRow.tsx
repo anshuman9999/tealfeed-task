@@ -40,7 +40,13 @@ const TableRow = ({ teamName, teamNumber }: ITableRowProps) => {
         <span>{totalPoints}</span>
         <div className="last_5__result_container">
           {lastFiveMatchesData?.map((data, index) => (
-            <span key={index}>{data.won ? <Check /> : <Cancel />}</span>
+            <span key={index}>
+              {data.won ? (
+                <Check style={{ height: 16, width: 16 }} />
+              ) : (
+                <Cancel style={{ height: 16, width: 16 }} />
+              )}
+            </span>
           ))}
         </div>
       </S.RowInfo>
