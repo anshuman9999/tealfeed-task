@@ -9,7 +9,6 @@ export const FooterContainer = styled.footer<{ theme: string }>`
   height: 80px;
   margin-left: auto;
   margin-right: auto;
-  z-index: 50;
   color: ${({ theme }) => (theme === "dark" ? "#fff" : "#000")};
 
   & .footer__container {
