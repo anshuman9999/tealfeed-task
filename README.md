@@ -1,4 +1,4 @@
-# Tealfeed Fron-End Intern Assignment
+# Tealfeed Front-End Intern Assignment
 
 This is my submission for the Tealfeed Front-End Assignment.
 
